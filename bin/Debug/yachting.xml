@@ -1,0 +1,411 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="yachting">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="order_number" type="xs:int" />
+                <xs:element name="order_date" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="clients_id" type="xs:int" minOccurs="0" />
+                <xs:element name="legal_entity" type="xs:boolean" minOccurs="0" />
+                <xs:element name="total_cost" type="xs:double" minOccurs="0" />
+                <xs:element name="number_of_people" type="xs:int" minOccurs="0" />
+                <xs:element name="total_discount" type="xs:int" minOccurs="0" />
+                <xs:element name="services" type="xs:boolean" minOccurs="0" />
+                <xs:element name="presents" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="clients">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="clients_id" type="xs:int" />
+                <xs:element name="fio" type="xs:string" minOccurs="0" />
+                <xs:element name="phone_number" type="xs:string" minOccurs="0" />
+                <xs:element name="discount" type="xs:string" minOccurs="0" />
+                <xs:element name="email" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="info">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="ships_type" type="xs:string" minOccurs="0" />
+                <xs:element name="team_id" type="xs:int" minOccurs="0" />
+                <xs:element name="date_begin" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="date_end" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="crew_number" type="xs:int" minOccurs="0" />
+                <xs:element name="order_number" type="xs:int" />
+                <xs:element name="sails_type" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="services">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="service_id" type="xs:int" />
+                <xs:element name="service_name" type="xs:string" minOccurs="0" />
+                <xs:element name="price" type="xs:double" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="services_in_order">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="service_id" type="xs:int" />
+                <xs:element name="order_number" type="xs:int" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+      <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+        <xs:selector xpath=".//yachting" />
+        <xs:field xpath="order_number" />
+      </xs:unique>
+      <xs:unique name="clients_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+        <xs:selector xpath=".//clients" />
+        <xs:field xpath="clients_id" />
+      </xs:unique>
+      <xs:unique name="info_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+        <xs:selector xpath=".//info" />
+        <xs:field xpath="order_number" />
+      </xs:unique>
+      <xs:unique name="services_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+        <xs:selector xpath=".//services" />
+        <xs:field xpath="service_id" />
+      </xs:unique>
+      <xs:unique name="services_in_order_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+        <xs:selector xpath=".//services_in_order" />
+        <xs:field xpath="service_id" />
+        <xs:field xpath="order_number" />
+      </xs:unique>
+      <xs:keyref name="services_in_order_services" refer="services_Constraint1">
+        <xs:selector xpath=".//services_in_order" />
+        <xs:field xpath="service_id" />
+      </xs:keyref>
+      <xs:keyref name="services_in_order_yachting" refer="Constraint1">
+        <xs:selector xpath=".//services_in_order" />
+        <xs:field xpath="order_number" />
+      </xs:keyref>
+      <xs:keyref name="info_yachting" refer="Constraint1">
+        <xs:selector xpath=".//info" />
+        <xs:field xpath="order_number" />
+      </xs:keyref>
+      <xs:keyref name="clients_yachting" refer="clients_Constraint1">
+        <xs:selector xpath=".//yachting" />
+        <xs:field xpath="clients_id" />
+      </xs:keyref>
+    </xs:element>
+  </xs:schema>
+  <yachting>
+    <order_number>1</order_number>
+    <order_date>2014-11-23T00:00:00+03:00</order_date>
+    <clients_id>1222</clients_id>
+    <legal_entity>false</legal_entity>
+    <total_cost>0</total_cost>
+    <number_of_people>4</number_of_people>
+    <total_discount>0</total_discount>
+    <services>true</services>
+    <presents />
+  </yachting>
+  <yachting>
+    <order_number>2</order_number>
+    <order_date>2014-11-23T00:00:00+03:00</order_date>
+    <clients_id>1231</clients_id>
+    <legal_entity>true</legal_entity>
+    <total_cost>0</total_cost>
+    <number_of_people>100</number_of_people>
+    <total_discount>0</total_discount>
+    <services>true</services>
+    <presents />
+  </yachting>
+  <yachting>
+    <order_number>12</order_number>
+    <order_date>2014-12-10T00:00:00+03:00</order_date>
+    <clients_id>1227</clients_id>
+    <legal_entity>false</legal_entity>
+    <total_cost>730</total_cost>
+    <number_of_people>3</number_of_people>
+    <total_discount>0</total_discount>
+    <services>false</services>
+    <presents>ыв</presents>
+  </yachting>
+  <yachting>
+    <order_number>21</order_number>
+    <order_date>2014-12-17T00:00:00+03:00</order_date>
+    <clients_id>1246</clients_id>
+    <legal_entity>false</legal_entity>
+    <total_cost>200</total_cost>
+    <number_of_people>3</number_of_people>
+    <total_discount>0</total_discount>
+    <services>true</services>
+    <presents />
+  </yachting>
+  <yachting>
+    <order_number>22</order_number>
+    <order_date>2014-12-18T00:00:00+03:00</order_date>
+    <clients_id>1247</clients_id>
+    <legal_entity>true</legal_entity>
+    <total_cost>5418</total_cost>
+    <number_of_people>6</number_of_people>
+    <total_discount>31</total_discount>
+    <services>true</services>
+    <presents>елка</presents>
+  </yachting>
+  <yachting>
+    <order_number>23</order_number>
+    <order_date>2014-12-18T00:00:00+03:00</order_date>
+    <clients_id>1248</clients_id>
+    <legal_entity>false</legal_entity>
+    <total_cost>230400</total_cost>
+    <number_of_people>4</number_of_people>
+    <total_discount>31</total_discount>
+    <services>true</services>
+    <presents>елка</presents>
+  </yachting>
+  <clients>
+    <clients_id>1231</clients_id>
+    <fio>Alex_Alex_company</fio>
+    <phone_number>89178765653</phone_number>
+    <discount>12</discount>
+    <email>13jghft@mail.ru</email>
+  </clients>
+  <clients>
+    <clients_id>1222</clients_id>
+    <fio>jANE_Jane</fio>
+    <phone_number>+79864357322</phone_number>
+    <discount>10</discount>
+    <email>h34hu23yh@yandex.ru</email>
+  </clients>
+  <clients>
+    <clients_id>1223</clients_id>
+    <fio>орп</fio>
+    <discount />
+    <email />
+  </clients>
+  <clients>
+    <clients_id>1224</clients_id>
+    <fio>огнрпек</fio>
+    <discount />
+    <email />
+  </clients>
+  <clients>
+    <clients_id>1225</clients_id>
+    <fio>рнепк</fio>
+    <discount />
+    <email />
+  </clients>
+  <clients>
+    <clients_id>1226</clients_id>
+    <fio>wdf</fio>
+    <discount>11</discount>
+    <email>efgcbv</email>
+  </clients>
+  <clients>
+    <clients_id>1227</clients_id>
+    <fio>ФЫЧ</fio>
+    <discount>22</discount>
+    <email>вфыма</email>
+  </clients>
+  <clients>
+    <clients_id>1228</clients_id>
+    <fio>цвуак</fio>
+    <phone_number>23456</phone_number>
+    <discount>11</discount>
+    <email>йцвуыап</email>
+  </clients>
+  <clients>
+    <clients_id>1229</clients_id>
+    <fio>горнпе</fio>
+    <phone_number>7654</phone_number>
+    <discount>44</discount>
+    <email>гонрпе</email>
+  </clients>
+  <clients>
+    <clients_id>1230</clients_id>
+    <fio>гнеку</fio>
+    <phone_number>7654</phone_number>
+    <discount>33</discount>
+    <email>лорп</email>
+  </clients>
+  <clients>
+    <clients_id>1240</clients_id>
+    <fio>орнпеак</fio>
+    <phone_number>765</phone_number>
+    <discount>4</discount>
+    <email>щбшьгонр</email>
+  </clients>
+  <clients>
+    <clients_id>1241</clients_id>
+    <fio>рнпеак</fio>
+    <phone_number>7654</phone_number>
+    <discount>44</discount>
+    <email>тнрепкаув</email>
+  </clients>
+  <clients>
+    <clients_id>1242</clients_id>
+    <fio>рнепка</fio>
+    <phone_number>7654</phone_number>
+    <discount>4</discount>
+    <email>ьгнтек</email>
+  </clients>
+  <clients>
+    <clients_id>1243</clients_id>
+    <fio>87г6</fio>
+    <phone_number>765</phone_number>
+    <discount>4</discount>
+    <email>щшегн</email>
+  </clients>
+  <clients>
+    <clients_id>1244</clients_id>
+    <fio>шгоне</fio>
+    <phone_number>7654</phone_number>
+    <discount>3</discount>
+    <email>шгнек</email>
+  </clients>
+  <clients>
+    <clients_id>1245</clients_id>
+    <fio>лгноек</fio>
+    <phone_number>87654</phone_number>
+    <discount>4</discount>
+    <email>зщдшлгон</email>
+  </clients>
+  <clients>
+    <clients_id>1246</clients_id>
+    <fio>дщлшог</fio>
+    <phone_number>654</phone_number>
+    <discount>4</discount>
+    <email>лшгонре</email>
+  </clients>
+  <clients>
+    <clients_id>1247</clients_id>
+    <fio>ДедМороз</fio>
+    <phone_number>7912345678</phone_number>
+    <discount>31</discount>
+    <email>ice@mail.ru</email>
+  </clients>
+  <clients>
+    <clients_id>1248</clients_id>
+    <fio>снегурочка</fio>
+    <phone_number>78987654322</phone_number>
+    <discount>31</discount>
+    <email>ice_baby@mail.ru</email>
+  </clients>
+  <clients>
+    <clients_id>1249</clients_id>
+    <fio>New</fio>
+    <phone_number>987765411</phone_number>
+    <discount>2</discount>
+    <email>1@mail.ru</email>
+  </clients>
+  <info>
+    <ships_type>motor_boat</ships_type>
+    <team_id>55</team_id>
+    <date_begin>2015-06-23T09:00:00+03:00</date_begin>
+    <date_end>2015-06-25T09:00:00+03:00</date_end>
+    <crew_number>3</crew_number>
+    <order_number>1</order_number>
+    <sails_type>NO</sails_type>
+  </info>
+  <info>
+    <ships_type>yacht</ships_type>
+    <team_id>56</team_id>
+    <date_begin>2015-07-07T07:22:00+03:00</date_begin>
+    <date_end>2015-07-10T20:30:00+03:00</date_end>
+    <crew_number>4</crew_number>
+    <order_number>2</order_number>
+    <sails_type>square</sails_type>
+  </info>
+  <info>
+    <ships_type>yacht</ships_type>
+    <team_id>55</team_id>
+    <date_begin>2014-12-10T00:00:00+03:00</date_begin>
+    <date_end>2014-12-10T04:04:00+03:00</date_end>
+    <crew_number>4</crew_number>
+    <order_number>12</order_number>
+    <sails_type>square</sails_type>
+  </info>
+  <info>
+    <ships_type>motorboat</ships_type>
+    <team_id>55</team_id>
+    <date_begin>2014-12-17T00:00:00+03:00</date_begin>
+    <date_end>2014-12-17T02:02:00+03:00</date_end>
+    <crew_number>3</crew_number>
+    <order_number>21</order_number>
+    <sails_type>square</sails_type>
+  </info>
+  <info>
+    <ships_type>motorboat</ships_type>
+    <team_id>55</team_id>
+    <date_begin>2014-12-31T00:00:00+03:00</date_begin>
+    <date_end>2015-01-01T06:06:00+03:00</date_end>
+    <crew_number>3</crew_number>
+    <order_number>22</order_number>
+    <sails_type>NO</sails_type>
+  </info>
+  <info>
+    <ships_type>motorboat</ships_type>
+    <team_id>55</team_id>
+    <date_begin>2014-12-31T00:00:00+03:00</date_begin>
+    <date_end>2015-01-02T00:00:00+03:00</date_end>
+    <crew_number>3</crew_number>
+    <order_number>23</order_number>
+    <sails_type>NO</sails_type>
+  </info>
+  <services>
+    <service_id>1</service_id>
+    <service_name>walk</service_name>
+    <price>800</price>
+  </services>
+  <services>
+    <service_id>2</service_id>
+    <service_name>foto</service_name>
+    <price>1000</price>
+  </services>
+  <services>
+    <service_id>3</service_id>
+    <service_name>disco</service_name>
+    <price>1400</price>
+  </services>
+  <services>
+    <service_id>4</service_id>
+    <service_name>restaurant</service_name>
+    <price>23456</price>
+  </services>
+  <services_in_order>
+    <service_id>1</service_id>
+    <order_number>1</order_number>
+  </services_in_order>
+  <services_in_order>
+    <service_id>2</service_id>
+    <order_number>1</order_number>
+  </services_in_order>
+  <services_in_order>
+    <service_id>2</service_id>
+    <order_number>2</order_number>
+  </services_in_order>
+  <services_in_order>
+    <service_id>3</service_id>
+    <order_number>2</order_number>
+  </services_in_order>
+  <services_in_order>
+    <service_id>4</service_id>
+    <order_number>2</order_number>
+  </services_in_order>
+  <services_in_order>
+    <service_id>1</service_id>
+    <order_number>21</order_number>
+  </services_in_order>
+  <services_in_order>
+    <service_id>2</service_id>
+    <order_number>22</order_number>
+  </services_in_order>
+  <services_in_order>
+    <service_id>3</service_id>
+    <order_number>23</order_number>
+  </services_in_order>
+</NewDataSet>

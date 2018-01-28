@@ -1,0 +1,20 @@
+<SOAP-ENV:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+<SOAP-ENV:Body>
+<a1:order_serialized id="ref-1" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/yachting_firm/yachting_firm%2C%20Version%3D1.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<order_date>2014-12-17T00:00:00.0000000+03:00</order_date>
+<order_number>21</order_number>
+<total_cost>24400</total_cost>
+<total_discount>0</total_discount>
+<number_of_people>3</number_of_people>
+<info href="#ref-3"/>
+</a1:order_serialized>
+<a1:order_info id="ref-3" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/yachting_firm/yachting_firm%2C%20Version%3D1.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<ships_type id="ref-4">motorboat</ships_type>
+<team_id>55</team_id>
+<date_begin>2014-12-17T00:00:00.0000000+03:00</date_begin>
+<date_end>2014-12-17T02:02:00.0000000+03:00</date_end>
+<crew_number>3</crew_number>
+<sails_type id="ref-5">square</sails_type>
+</a1:order_info>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
